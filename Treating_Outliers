@@ -2,7 +2,7 @@
 Handling Outliers in Machine Leaning 📚🔥🧩
 
 
-* What are outliers?
+Q1) What are outliers?
 Outliers are those data points that differ significantly from other observations present in a given dataset. It can occur because of variability in measurement and due to misinterpretation in filling data points.
 
 For example: If we are discussing the salary of students in a class, where students have salaries of 20K, 30K 40K. But what if suddenly Elon Musk sits in that classroom. Then, the average salary of that classroom would be in crores or millions.
@@ -17,7 +17,7 @@ Here are a few common causes of outliers in the dataset:
 3) Natural Outliers: When an outlier is not artificial, it is a natural outlier. Most of the real-world data belong to this category
 
 
-* When are outliers dangerous?
+Q2) When are outliers dangerous?
 Sometimes, we have to remove outliers and should not think more about them.
 
 For instance: If we have an age column and someone(human) has an age of 300, which is assumed to be a human error while entering the data. We must remove those outliers.
@@ -31,7 +31,7 @@ So, we need to think before removing or keeping them.
 And many times, it is very difficult to get an idea of what should be done with the outliers either to keep them, remove them or make changes.
 
 
-* What are the effects of outliers on the Machine Learning Algorithms?
+Q3) What are the effects of outliers on the Machine Learning Algorithms?
 There are certain sets of algorithms in Machine Learning which gives bad results if outliers are not handled.
 
 These algorithms are:
@@ -49,7 +49,7 @@ All the above algorithms calculate weights and for calculating weights, outliers
 On the other hand, the tree-based algorithm does not have more effect on outliers because they actually cut the dataspace depending on the condition, they cut the axis.
 
 
-***How treat Outliers?
+Q4)How treat Outliers?
 
 A) Trimming:
 
