@@ -1,0 +1,110 @@
+
+Handling Outliers in Machine Leaning 📚🔥🧩
+
+
+* What are outliers?
+Outliers are those data points that differ significantly from other observations present in a given dataset. It can occur because of variability in measurement and due to misinterpretation in filling data points.
+
+For example: If we are discussing the salary of students in a class, where students have salaries of 20K, 30K 40K. But what if suddenly Elon Musk sits in that classroom. Then, the average salary of that classroom would be in crores or millions.
+
+*  How are the outliers introduced in the dataset?
+Here are a few common causes of outliers in the dataset:
+
+1) Data Entry Errors: Human errors such as errors caused during data collection, recording, or entry can cause outliers in data.
+
+**2) Measurement Instrument Errors: **It's the most common error caused by the measurement instrument used that turns out to be faulty.
+
+3) Natural Outliers: When an outlier is not artificial, it is a natural outlier. Most of the real-world data belong to this category
+
+
+* When are outliers dangerous?
+Sometimes, we have to remove outliers and should not think more about them.
+
+For instance: If we have an age column and someone(human) has an age of 300, which is assumed to be a human error while entering the data. We must remove those outliers.
+
+Many times, outliers are considered good for the dataset & we need to think before removing them
+
+There is an anomaly detection algorithm that is generally used for fraud detection where we want to know if there is any issue with a credit card statement and we want to detect outliers at that time we cannot remove outliers
+
+So, we need to think before removing or keeping them.
+
+And many times, it is very difficult to get an idea of what should be done with the outliers either to keep them, remove them or make changes.
+
+
+* What are the effects of outliers on the Machine Learning Algorithms?
+There are certain sets of algorithms in Machine Learning which gives bad results if outliers are not handled.
+
+These algorithms are:
+
+1) Linear Regression
+
+2) Logistic Regression
+
+3) Adaboost
+
+4) Deep Learning
+
+All the above algorithms calculate weights and for calculating weights, outliers are needed to be handled.
+
+On the other hand, the tree-based algorithm does not have more effect on outliers because they actually cut the dataspace depending on the condition, they cut the axis.
+
+
+***How treat Outliers?
+
+A) Trimming:
+
+From the above image, the term Trimming means to remove outliers completely. The problem with the trimming technique is when we have more percent of outliers in the dataset, and we use the trimming technique then leads to a reduction of the amount of data, and the data becomes thin. Whereas it is also considered the fastest technique to treat outliers.
+
+B) Capping:
+
+While Capping means to cap (replace) the data from both the left and right sides of the distribution. Outliers will always be on the left and right side and so, we can set a limit on both sides. For instance: If we decide a limit on the left side of the distribution to be 1 and for the right side to be 99, then any value below or above the limit decided will be replaced (capped) by 1 or 99 respectively. There are multiple formulas and techniques to identify this limit for capping; some are elaborated on in the later section of this article.
+
+C) Discretization:
+
+Moreover, Discretization is a technique in which we have to create a range for values such as 0–10, 10–20, 20–30 & 30-above. Now, all the continuous values in the column will be categorized into these ranges. If a column has a value of 1000 which is identified as an outlier; will be replaced with the ‘30-above’ category and this will lead to handling an outlier.
+
+D) Treat as Missing Values:
+While the last technique says to treat as missing values. We can treat outliers as missing values in the data(column). We can identify outliers and replace them with ‘NaN’. Now, we can use many different missing value imputation techniques, for example, KNN Imputer, and Iterative Imputer to fill in missing values. For more imputation techniques please refer to Handling Missing value
+
+But mostly 2 outliers handling techniques are famous 1) Trimming & 2) Capping
+
+
+**How to detect Outliers?
+
+There are many different ways to detect Outliers, but 3 main techniques are important and famous.
+
+Z-score Technique: This technique is often known as the Normal Distribution outlier detection and removal technique.
+
+
+The first assumption before using the z-score technique is that the data(column) should be ‘Bell-curved’ or Normally Distributed, which also means that more percent of values are in the center and fewer values are on both sides as shown in the figure above.
+
+Secondly, any value lying beyond the µ + 3(σ) and µ — 3(σ) then they is called an outlier.
+
+Now after finding outliers with the help of the z-score technique, we can handle those outliers in 2 different ways, they are:
+
+→ Trimming: We can remove the data lying beyond the µ + 3(σ) and µ — 3(σ). For instance: If we have a normally distributed column with 1000 rows in it out of which, 5 values are lying beyond the µ + 3(σ) and µ — 3(σ), then we can remove those 5 values and our new data will have 995 values in it.
+
+→ Capping: We can cap (replace) outliers that are detected by the z-score technique, by keeping the threshold on both sides. The threshold should be maintained by upper and lower limits, where the upper limit = µ + 3(σ), and the lower limit = µ — 3(σ). So, if our column(data) has an upper limit of 55 and a lower limit of 2, then any values lying after 55 and below will be replaced by the numbers respectively.
+
+2) IQR (Inter Quartile Range) Technique: This technique is often known as Skewed distribution for outlier detection and removal technique.
+
+
+The assumption for using this technique is the data(column) is left or right-skewed and not normally distributed as shown in the figure above.
+
+For that particular column, we need to find its outlier by finding IQR, Q1, Q3, upper-limit, and Lower-limit.
+
+
+Here, the upper limit = Q1–1.5 *IQR
+
+Lower Limit = Q3 + 1.5 *IQR
+
+Now, any values lying beyond, and above the upper or lower limit are considered outliers.
+
+After finding outliers with the help of the IQR Technique, we can handle those outliers by trimming or capping them
+
+3) Percentile Distribution: In this technique, we create a threshold on both sides data (column). Depending on our business problem we create thresholds on both sides as shown in the below image.
+
+
+For this problem, we have kept the 2.5th percentile on the left side and the 97.5th percentile on the right side of the data (column). So, any value on the left side of the column, which is less than the 2.5th percentile and greater than the 97.5th percentile is considered an outlier.
+
+After detecting outliers, we can handle them with trimming and capping techniques. Here the capping technique is also known as the winsorization technique
