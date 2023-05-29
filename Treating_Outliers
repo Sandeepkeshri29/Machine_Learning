@@ -12,7 +12,8 @@ Here are a few common causes of outliers in the dataset:
 
 1) Data Entry Errors: Human errors such as errors caused during data collection, recording, or entry can cause outliers in data.
 
-**2) Measurement Instrument Errors: **It's the most common error caused by the measurement instrument used that turns out to be faulty.
+**
+2) Measurement Instrument Errors: **It's the most common error caused by the measurement instrument used that turns out to be faulty.
 
 3) Natural Outliers: When an outlier is not artificial, it is a natural outlier. Most of the real-world data belong to this category
 
